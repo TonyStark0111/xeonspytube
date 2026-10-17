@@ -1,0 +1,24 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Download redirect — goes straight to GitHub (fastest & most reliable)
+[[redirects]]
+  from = "/api/download"
+  to = "https://github.com/IM-SPYBOY/SPYTube/releases/latest/download/SPYTube.apk"
+  status = 302
+  force = true
+
+# Map /api/stats → Netlify Function
+[[redirects]]
+  from = "/api/stats"
+  to = "/.netlify/functions/stats"
+  status = 200
+  force = true
+
+# Map /api/visit → Netlify Function
+[[redirects]]
+  from = "/api/visit"
+  to = "/.netlify/functions/visit"
+  status = 200
+  force = true
